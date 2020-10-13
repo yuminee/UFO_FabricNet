@@ -1,0 +1,22 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: knucoin.com
+    Specs:
+      - Hostname: orderer
+      - Hostname: orderer2
+      - Hostname: orderer3
+      - Hostname: orderer4
+      - Hostname: orderer5
+PeerOrgs:
+  - Name: Sales
+    Domain: sales.knucoin.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+  - Name: Customer
+    Domain: customer.knucoin.com
+    Template:
+      Count: 2
+    Users:
+      Count: 1
