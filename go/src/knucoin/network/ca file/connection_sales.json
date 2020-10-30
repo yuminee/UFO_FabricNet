@@ -33,7 +33,7 @@
                 "ca.sales.knucoin.com"
             ],
             "adminPrivateKey": {
-                "path":"../../network/crypto-config/peerOrganizations/sales.knucoin.com/users/Admin@sales.knucoin.com/msp/keystore/825c59f5d6e094a62daf7d3c335fc9bae3d82f646706776d32241ed03e6869fd_sk"
+                "path":"../../network/crypto-config/peerOrganizations/sales.knucoin.com/users/Admin@sales.knucoin.com/msp/keystore/10b40bac5324616874adc467bba9602bed72464ae9d2a57e111dbd3d50ae8225_sk"
             },
             "signedCert":{
                 "path":"../../network/crypto-config/peerOrganizations/sales.knucoin.com/users/Admin@sales.knucoin.com/msp/signcerts/Admin@sales.knucoin.com-cert.pem"
