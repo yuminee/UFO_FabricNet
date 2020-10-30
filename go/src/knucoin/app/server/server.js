@@ -56,7 +56,7 @@ app.post('/api/getWallet', (req, res) => {
     user = [id, org]
     args = [id]
 
-    sdk.send(false, user, 'getWallet', args, res)
+    sdk.send(true, user, 'getWallet', args, res)
 })
 
 

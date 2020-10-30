@@ -36,28 +36,28 @@ async function main(args, res) {
             res.send('fail')
             return;
         }
-
+        console.log("1")
         const gateway = new Gateway();
         await gateway.connect(ccpPath, { wallet, identity: args[1], discovery: { enabled: true, asLocalhost: true } });
-
+        console.log("2")
         const ca = gateway.getClient().getCertificateAuthority();
         const adminIdentity = gateway.getCurrentIdentity();
-
+        console.log("3")
         const secret = await ca.register({ affiliation: 'org1.department1', enrollmentID: args[0], role: 'client' }, adminIdentity);
         const enrollment = await ca.enroll({ enrollmentID: args[0], enrollmentSecret: secret });
         const userIdentity = X509WalletMixin.createIdentity(args[2], enrollment.certificate, enrollment.key.toBytes());
         await wallet.import(args[0], userIdentity);
-
+        console.log("4")
         // Excute ChainCode to init Wallet
         const network = await gateway.getNetwork('channelsales1');
         const contract = network.getContract('knucoin-cc3');
-
+        console.log("5")
         await contract.submitTransaction('initWallet', ...[args[0]])
         await gateway.disconnect();
-
+        console.log("6")
         console.log(`register: Successfully registered and enrolled client user(id:${args[0]}) of ${args[2]} and imported it into the wallet`);
         res.send('success')
-
+        console.log("7")
     } catch (error) {
         console.error(`register: Failed to enroll client user(id:${args[0]}) of ${args[2]}: ${error}`);
         process.exit(1);
