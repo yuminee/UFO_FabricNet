@@ -33,7 +33,7 @@ async function send(type, user, func, args, res){
         await gateway.connect(ccpPath, { wallet, identity: user[0], discovery: { enabled: true, asLocalhost: true } });
         const network = await gateway.getNetwork('channelsales1');
         const contract = network.getContract('knucoin-cc3');
-
+        // type이 true면 invoke false면 query
         if(type){
             //func은 transaction 이름 
             //args는 그 transaction이 가지는 인자들
