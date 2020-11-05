@@ -32,7 +32,7 @@ docker-compose -f docker-compose.yaml down
 
 replacePrivateKey
 
-docker-compose -f docker-compose.yaml up
+docker-compose -f docker-compose.yaml up -d
 
 # Create the channel
 docker exec cli peer channel create -o orderer.knucoin.com:7050 -c channelsales1 -f /etc/hyperledger/configtx/channel1.tx
